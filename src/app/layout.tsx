@@ -1,12 +1,16 @@
-import { Chat } from "@/components"
+import { Chat } from "@/components";
+import { Inter } from "next/font/google";
+import { Providers } from "@/components";
+import { Toaster } from "react-hot-toast"
 import "./globals.css"
-import { Inter } from "next/font/google"
+
+
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
   title: "Gazali Book Store",
-  description: "Gazali book store for all scientific books.",
+  description: "Gazali book store for all kinds of books.",
 }
 
 export default function RootLayout({
@@ -16,10 +20,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} w-full min-h-screen`}>
-        {children}
-        <Chat />
-      </body>
+      <Providers>
+        <body className={`${inter.className} w-full min-h-screen`}>
+          {children}
+          <Chat />
+          <Toaster />
+        </body>
+      </Providers>
     </html>
   )
 }

@@ -79,3 +79,24 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 0.25rem;
+  height: 0.25rem;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  --bg-opacity: 1;
+  background-color: #f7fafc;
+  background-color: rgba(247, 250, 252, var(--bg-opacity));
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  --bg-opacity: 0.3;
+  background-color: rgb(10, 102, 194);
+  background-color: rgba(10, 102, 194, var(--bg-opacity));
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 0.25rem;
+}
